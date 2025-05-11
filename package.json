@@ -1,5 +1,6 @@
 {
   "name": "admin-dashboard",
+  "homepage": "https://nmaqws147.github.io/admin-dashboard/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -43,7 +44,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -65,6 +68,7 @@
   },
   "devDependencies": {
     "@types/draft-js": "^0.11.18",
-    "@types/react-modal": "^3.16.3"
+    "@types/react-modal": "^3.16.3",
+    "gh-pages": "^6.3.0"
   }
 }

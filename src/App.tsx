@@ -2,7 +2,7 @@
 
 import './App.css';
 import { SidebarProvider } from './components/sidebar';
-import { BrowserRouter,Route,Routes} from 'react-router-dom';
+import { HashRouter,Route,Routes} from 'react-router-dom';
 import MyNavbar from './components/navbar';
 import medalData from './components/usersmanagment/medals.json';
 import Sidebar from './components/sidebar';
@@ -243,7 +243,7 @@ const App:React.FC = () => {
     .then(data => setWeather(data.daily));
   },[])
     return (
-    <BrowserRouter>
+    <HashRouter>
       <SidebarProvider>
         <div className="app-container">
           <MyNavbar />
@@ -270,7 +270,7 @@ const App:React.FC = () => {
           </div>
         </div>
       </SidebarProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 export default App;

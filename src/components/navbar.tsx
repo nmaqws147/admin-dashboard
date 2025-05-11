@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../style/navbar.css';
 import { useSideBar } from './sidebar';
 import { Navbar, Nav, Container, Button, OverlayTrigger, Popover } from 'react-bootstrap';
-import { FaRegEnvelope, FaBell, FaSun, FaMoon } from 'react-icons/fa';
+import { FaSun, FaMoon } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 const MyNavbar = () => {
@@ -97,7 +97,7 @@ const MyNavbar = () => {
                 <Popover id="popover-admin-details">
                   <Popover.Header className="d-flex align-items-center justify-content-center p-5 bg-primary">
                     <img
-                      src="./img/user8-128x128.jpg" 
+                      src="./img/avatar2.png" 
                       alt="Admin Profile"
                       className="rounded-circle me-2"
                       style={{ width: '120px', height: '120px' }}
@@ -120,7 +120,7 @@ const MyNavbar = () => {
               }
             >
               <img
-                src="./img/user8-128x128.jpg"
+                src="./img/avatar3.png"
                 alt="Admin"
                 className="navbar-img rounded-circle me-2"
                 style={{ cursor: 'pointer', width: '40px', height: '40px' }}

@@ -74,18 +74,18 @@ const MyNavbar = () => {
     }
   };
 
-  // Toggling the message popover
-  const toggleMessages = () => {
-    setShowMessages((prev) => !prev); // Toggle visibility state
-  };
-
   return (
-    <Navbar variant={'light'} className="navbar p-3" style={{
-      marginLeft: isOpen ? '240px' : '0',
+    <Navbar variant={'light'} className={`navbar p-3 ${isOpen ? 'sidebar-open' : ''}`}style={{
       transition: "all 0.5s ease",
     }}>
       <Container fluid>
-        <GiHamburgerMenu cursor={'pointer'} className="ms-3" onClick={toggleSidebar} />
+      <GiHamburgerMenu
+  cursor={'pointer'}
+  className={`ms-3 hamburger-icon`}
+  style={{display:"block",zIndex:"1051",position:"absolute",top: isOpen ? "10px" : "10px"}}
+  onClick={toggleSidebar}
+/>
+
         <Nav className="ms-auto">
           <Nav.Item className="d-flex align-items-center flex-row-reverse">
 

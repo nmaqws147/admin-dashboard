@@ -30,6 +30,12 @@ body {
     height: 60px;
     cursor: pointer;
   }
+  @media (min-width: 440px) {
+    .navbar.sidebar-open {
+      margin-left: 240px;
+      transition: all 0.5s ease;
+    }
+  }
   /*End nav-bar*/
 
   /*Start side-bar*/

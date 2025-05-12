@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useRef } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -17,7 +17,7 @@ const FullCalendarComponent: React.FC = () => {
   const [deleteEvent, setDeleteEvent] = useState(false);
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
   const { isOpen } = useSideBar();
-
+  const calendarRef = useRef<FullCalendar | null>(null);  
   useEffect(() => {
     localStorage.setItem('calendarEvents', JSON.stringify(events));
   }, [events]);
@@ -26,7 +26,15 @@ const FullCalendarComponent: React.FC = () => {
     setShowEvent(false);
     setEvent('');
   }
-
+  useEffect(() => {
+    const calendarApi = calendarRef.current?.getApi();
+    if (calendarApi) {
+      setTimeout(() => {
+        calendarApi.updateSize();
+      }, 300); 
+    }
+  }, [isOpen]);
+  
   function handleOpenDeleteClick(clickInfo: any) {
     setSelectedEventId(clickInfo.event.id);
     setDeleteEvent(true);
@@ -137,6 +145,7 @@ const FullCalendarComponent: React.FC = () => {
           dateClick={handleDateClick}
           eventClick={handleOpenDeleteClick}
           events={events}
+          ref={calendarRef}
         />
 
         {showEvent && (

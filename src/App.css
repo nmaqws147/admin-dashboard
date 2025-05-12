@@ -30,6 +30,21 @@ body {
     height: 60px;
     cursor: pointer;
   }
+  @media(max-width:500px){
+    .humbrger-icon{
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      z-index: 1000;
+    }
+  }
+  @media (min-width: 500px) {
+    .navbar.sidebar-open {
+      margin-left: 240px;
+      transition: all 0.5s ease;
+    }
+  }
+  
   /*End nav-bar*/
 
   /*Start side-bar*/

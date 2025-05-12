@@ -16,52 +16,6 @@ const MyNavbar = () => {
       return false;
     }
   });
-  const [showMessages, setShowMessages] = useState<boolean>(false); // State to toggle message popover visibility
-
-  // Sample data for messages
-  const messages = [
-    {
-      id: 1,
-      name: 'John Doe',
-      image: './img/user1.jpg',
-      message: 'Hey, I need help with the project.',
-    },
-    {
-      id: 2,
-      name: 'Jane Smith',
-      image: './img/user2.jpg',
-      message: 'Can you review my code?',
-    },
-    {
-      id: 3,
-      name: 'Sam Wilson',
-      image: './img/user3.jpg',
-      message: 'The new update looks great!',
-    },
-  ];
-
-  // Popover function for messages
-  const renderMessagesPopover = () => (
-    <Popover id="popover-messages">
-      <Popover.Header className="bg-primary text-white">Inbox</Popover.Header>
-      <Popover.Body>
-        {messages.map((user) => (
-          <div key={user.id} className="d-flex align-items-center mb-3">
-            <img
-              src={user.image}
-              alt={user.name}
-              className="rounded-circle me-3"
-              style={{ width: '40px', height: '40px' }}
-            />
-            <div>
-              <strong>{user.name}</strong>
-              <p className="mb-0 text-muted">{user.message}</p>
-            </div>
-          </div>
-        ))}
-      </Popover.Body>
-    </Popover>
-  );
 
   // Dark mode toggle function
   const handleDarkMode = () => {
@@ -74,18 +28,15 @@ const MyNavbar = () => {
     }
   };
 
-  // Toggling the message popover
-  const toggleMessages = () => {
-    setShowMessages((prev) => !prev); // Toggle visibility state
-  };
-
   return (
-    <Navbar variant={'light'} className="navbar p-3" style={{
-      marginLeft: isOpen ? '240px' : '0',
-      transition: "all 0.5s ease",
-    }}>
+    <Navbar
+  variant={'light'}
+  className={`navbar p-3 ${isOpen ? 'sidebar-open' : ''}`}
+  style={{transition:"0.5s ease all"}}
+>
+
       <Container fluid>
-        <GiHamburgerMenu cursor={'pointer'} className="ms-3" onClick={toggleSidebar} />
+        <GiHamburgerMenu cursor={'pointer'} className="humbrger-icon ms-3" onClick={toggleSidebar}/>
         <Nav className="ms-auto">
           <Nav.Item className="d-flex align-items-center flex-row-reverse">
 
